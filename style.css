@@ -1,0 +1,227 @@
+@font-face {
+    font-family: PixelMplus10;
+	src: url(/font/PixelMplus10-Regular.ttf);
+}
+
+/* 画面サイズが768px以下の時はPC用メニューは非表示 */
+@media screen and (max-width: 768px) {
+  .pc-menu {
+    display: none;
+  }
+}
+/* 画面サイズが769px以上の時はスマホ用メニューは非表示 */
+@media screen and (min-width: 769px) {
+  .sp-menu {
+    display: none;
+  }
+}
+
+body {
+    background-color: #E8E8E8;
+    color: #404040;
+    font-family: PixelMplus10;
+    font-size: 20px;
+    padding-top: 80px; 
+}
+header {
+    position: fixed;
+    width: 100%; 
+    height: 80px; 
+    color: #E8E8E8;
+    background: #666666;
+    padding: 20px 15px; 
+    box-sizing: border-box;
+    top: 0; 
+    left: 0; 
+    align-items: center;
+    display: flex; 
+    justify-content:space-between;
+    white-space: nowrap;
+}
+header .nav .pc-menu__list {
+    display: flex; 
+}
+header .nav .pc-menu__list li {
+    list-style: none; 
+    margin-left: 20px;
+}
+header .nav .pc-menu__list li a{
+   color: #193796;
+   text-decoration: none;
+}
+
+/* ハンバーガーメニューのボタン */
+.sp-menu__box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  z-index: 100;
+  background-color: #193796;
+}
+/* メニューの白線 */
+.sp-menu__box span,         /* 真ん中の線 */
+.sp-menu__box span:before,  /* 上の線 */
+.sp-menu__box span:after {  /* 下の線 */
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #E8E8E8;
+  position: absolute;
+}
+/* 上の線の位置 */
+.sp-menu__box span:before {
+  bottom: 8px;
+}
+/* 下の線の位置 */
+.sp-menu__box span:after {
+  top: 8px;
+}
+/* チェックボックスは常に非表示 */
+#sp-menu__check {
+  display: none;
+}
+/* チェックボックスのチェックがON */
+/* 真ん中の線 */
+#sp-menu__check:checked ~ .sp-menu__box span {
+  background: rgba(255, 255, 255, 0);
+}
+/* 上の線 */
+#sp-menu__check:checked ~ .sp-menu__box span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+/* 下の線 */
+#sp-menu__check:checked ~ .sp-menu__box span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+#sp-menu__check:checked ~ .hamburger__content {
+  left: 0;
+}
+#sp-menu__check:checked ~ .sp-menu__content {
+  left: 50%;
+}
+/* スマホ用メニュー */
+.sp-menu__content {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 100%;
+  z-index: 90;
+  background-color: #193796;
+  transition: all 0.5s;
+}
+/* スマホ用メニューのリスト */
+.sp-menu__list {
+  padding: 80px 10px 0;
+}
+.sp-menu__list li a{
+  color: #E8E8E8;
+  text-decoration: none;
+}
+/* スマホ用メニュー項目 */
+.sp-menu__item {
+  border-bottom: solid 1px #E8E8E8;
+  list-style: none;
+}
+/* スマホ用メニュー項目のリンク */
+.sp-menu__link {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  box-sizing: border-box;
+  color: #E8E8E8;
+  text-decoration: none;
+  padding: 9px 15px 10px 0;
+}
+
+/*リンク*/
+a {
+  text-decoration:none;
+}
+a:link {
+  color:#193796;
+}
+a:visited {
+  color:#193796;
+}
+a:hover {
+  color:#a00046;
+  text-decoration:underline;
+}
+a:active {
+  color:#a00046;
+}
+
+/*リセット*/
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+/*デザイン*/
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 30px;
+  padding: 20px 30px;
+  margin-bottom: 1em;
+  color: #E8E8E8;
+  background: #404040;
+}
+h3 {
+  font-size: 30px;
+  color: #193796;
+}
+
+/*下線*/
+.underline{
+border-bottom:2px solid #a00046;
+}
+/*表*/
+.table {
+  border-collapse: collapse;
+  width: 100%
+}
+.table th,
+.table td {
+  border: 2px solid #404040;
+}
+.table tr.table_t {
+  color: #E8E8E8;
+  background: #666666;
+  height: 40px;
+}
+.table td.table_tm_s {
+  width: 20%;
+}
+.table td.table_tm_n,
+.table td.table_tm_t {
+  width: 15%;
+}
+.table td.table_tm_u {
+  width: 20%;
+}
+.table td.table_tm_o {
+  width: 15%;
+}
+.table td.table_rd_y,
+.table td.table_rd_r {
+  width: 10%;
+}
+.table td.table_rd_j {
+  width: 15%;
+}
+.table td.table_rd_s {
+  background: #D48DAC;
+}
